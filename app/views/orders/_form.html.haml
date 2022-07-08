@@ -1,0 +1,14 @@
+= form_for @order, validate: true do |f|
+  .form-group.ml-4.mr-4
+    = f.label :date, class: "form-label required"
+    = f.text_field :date, autofocus: true, class: "form-control"
+  .form-group.ml-4.mr-4
+    = f.label :user_id, class: 'form-label required'
+    = f.select(:user_id, options_for_select(@users, @order.user),
+                          {prompt:"Seleccione"}, class: 'form-control')
+
+  .row
+    .offset-3.col-3
+      = link_to "Atrás", orders_path, class: "btn btn-secondary btn-block"
+    .col-3
+      = button_tag "Guardar" , class: "btn btn-outline-success btn-block", 'data-disable-with': "Guardando"

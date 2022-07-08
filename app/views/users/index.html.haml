@@ -1,0 +1,30 @@
+.div.m-4
+  .page.header
+    %p{:style => "color: green"}= notice
+    %h1.mb-4
+      = "Usuarios registrados"
+      .float-right
+        = link_to "Añadir usuario", new_user_path, class: "btn btn-primary"
+  %table.table.table-striped
+    %thread
+      %tr
+        %th= "Nombre Completo"
+        %th= "Direccion"
+        %th= "Correo"
+        %th= "Rol"
+        %th
+        %th
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td= user.address
+          %td= user.email
+          %td= t("activerecord.attributes.user.roles.#{user.role}")
+          %td
+          %td= link_to "Mostrar usuario", user, class: "btn btn-info"
+          %td= link_to "Editar usuario", edit_user_path(user), class: "btn btn-success"
+          %td= link_to "Eliminar usuario", user, method: :delete, class: "btn btn-danger",
+                                  data: {confirm: "Desea eliminar este usuario",
+                                  accept: "Aceptar",
+                                  reject: "Cancelar"}

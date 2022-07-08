@@ -1,0 +1,28 @@
+.div.m-4
+  .page.header
+    %p{:style => "color: green"}= notice
+    %h1.mb-4
+      = "Lista de pedidos"
+      .float-right
+        = link_to "Añadir nuevo pedido", new_order_path, class: "btn btn-primary"
+  %table.table.table-striped
+    %thread
+      %tr
+        %th= "Fecha de la orden"
+        %th= "Estado"
+        %th= "Usuario"
+        %th
+        %th
+        %th
+    %tbody
+      - @orders.each do |order|
+        %tr
+          %td= order.date
+          %td= order.state
+          %td= order.user.name
+          %td= link_to "Mostrar orden", order, class: "btn btn-info"
+          %td= link_to "Editar estado", edit_order_path(order), class: "btn btn-success"
+          %td= link_to "Eliminar orden", order, method: :delete, class: "btn btn-danger",
+                                  data: {confirm: "Desea eliminar este usuario",
+                                  accept: "Aceptar",
+                                  reject: "Cancelar"}

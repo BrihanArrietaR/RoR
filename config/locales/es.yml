@@ -1,0 +1,24 @@
+es:
+  application:
+    list_of: Lista de %{model}
+    new: Nuevo %{model}
+    show: Mostrar %{model}
+    edit: Editar %{model}
+    delete: Eliminar %{model}
+    back_to: Volver a %{model}
+    save: Guardar %{model}
+  activerecord:
+    modules:
+      user:
+        one: Usuario
+        other: Usuarios
+  attributes:
+    user:
+      name: Nombre
+      adress: Dirección
+      password: Contraseña
+      email: Correo Electrónico
+      roles:
+        administrator: Administrador
+        cook: Cocina
+        client: Cliente
