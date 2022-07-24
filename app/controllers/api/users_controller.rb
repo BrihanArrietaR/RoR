@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
       if @user.save
+        redirect_to user_url(@user), notice: "User was successfully created."
         render 'api/users/index', status: :created
       else
         render json: @user.errors, status: :unprocessable_entity
@@ -35,8 +36,8 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-
-    render 'api/users/show', status: :destroyed
+    
+    redirect_to users_url, notice: "User was successfully destroyed."
   end
 
   private

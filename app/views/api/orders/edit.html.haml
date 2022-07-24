@@ -1,0 +1,7 @@
+%h1 Editing order
+= render "form", order: @order
+%br/
+%div
+  = link_to "Mostrar pedido", @order
+  |
+  \#{link_to "Devuelta a pedidos", orders_path}

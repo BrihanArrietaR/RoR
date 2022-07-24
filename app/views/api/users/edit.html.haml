@@ -1,0 +1,7 @@
+%h1 Editando usuario
+= render "form", user: @user
+%br/
+%div
+  = link_to "Mostrar este usuario", @user
+  |
+  \#{link_to "Devolverse a usuarios registrados", users_path}

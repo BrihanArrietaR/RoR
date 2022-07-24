@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
   before_action :set_users
+  before_action :set_dishes
 
   def index
     @orders = Order.all
@@ -48,7 +49,11 @@ class OrdersController < ApplicationController
       @users = User.all.pluck(:name, :address, :email, :password, :role)
     end
 
+    def set_dishes
+      @dishes = Dish.all.pluck(:name, :description, :price)
+    end
+
     def order_params
-      params.require(:order).permit(:date, :state, :user_id)
+      params.require(:order).permit(:date, :state, :user_id, :dish_id)
     end
 end

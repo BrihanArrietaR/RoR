@@ -1,0 +1,29 @@
+.div.m-4
+  .page.header
+    %p{:style => "color: green"}= notice
+    %h1.mb-4
+      = "Lista de pedidos"
+      .float-right
+        = link_to "Añadir nuevo pedido", new_dish_path, class: "btn btn-primary"
+  %table.table.table-striped
+    %thread
+      %tr
+        %th= "Plato"
+        %th= "Descripcion"
+        %th= "Precio"
+        %th= "Foto"
+        %th
+        %th
+    %tbody
+      - @dishes.each do |dish|
+        %tr
+          %td= dish.name
+          %td= dish.description
+          %td= dish.price
+          %td= image_tag dish.photo if dish.photo.attached?
+          %td= link_to "Mostrar plato", dish, class: "btn btn-info"
+          %td= link_to "Editar plato", edit_dish_path(dish), class: "btn btn-success"
+          %td= link_to "Eliminar plato", dish, method: :delete, class: "btn btn-danger",
+                                  data: {confirm: "Desea eliminar este plato",
+                                  accept: "Aceptar",
+                                  reject: "Cancelar"}

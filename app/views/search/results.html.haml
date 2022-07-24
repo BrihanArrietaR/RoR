@@ -1,0 +1,22 @@
+.div.m-4
+  .page.header
+    %p{:style => "color: green"}= notice
+    %h1.mb-4
+      = "Usuarios encontrados"
+  %table.table.table-striped
+    %thread
+      %tr
+        %th= "Nombre Completo"
+        %th= "Direccion"
+        %th= "Correo"
+        %th= "Rol"
+        %th
+        %th
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.name
+          %td= user.address
+          %td= user.email
+          %td= t("activerecord.attributes.user.roles.#{user.role}")
+          %td

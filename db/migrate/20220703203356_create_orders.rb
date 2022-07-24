@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration[7.0]
       t.datetime :date
       t.integer :state
       t.belongs_to :user
+      t.belongs_to :dish
 
       t.timestamps
     end

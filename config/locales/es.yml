@@ -12,6 +12,12 @@ es:
       user:
         one: Usuario
         other: Usuarios
+      order:
+        one: Usuario
+        other: Usuarios
+      dish:
+        one: Usuario
+        other: Usuarios
   attributes:
     user:
       name: Nombre
@@ -22,3 +28,15 @@ es:
         administrator: Administrador
         cook: Cocina
         client: Cliente
+    order:
+      date: Fecha
+      states:
+        ontime: A_tiempo 
+        overtime: Sobre tiempo
+        delayed: Demorado 
+        canceled: Cancelado
+        delivered: Entregado
+    dish:
+      name: Nombre
+      description: Descripción
+      price: Precio

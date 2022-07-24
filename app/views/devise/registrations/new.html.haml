@@ -10,6 +10,10 @@
     %br/
     = f.text_field :address, autofocus: true, class: "form-control"
   .field
+    = f.label :password
+    %br/
+    = f.text_field :password, autofocus: true, class: "form-control"
+  .field
     = f.label :email
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
@@ -19,7 +23,7 @@
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
-    = f.password_field :password, autocomplete: "new-password"
+    = f.password_field :password, autocomplete: "password"
   .field
     = f.label :password_confirmation
     %br/

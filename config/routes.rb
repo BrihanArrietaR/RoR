@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :orders
   devise_for :users, :controllers => {:registrations => "users/registrations",
                                       :sessions => "users/sessions"}
-  resources :users
   root to: "home#index"
+
+  scope module: :api do
+    resources :users
+    resources :orders
+    resources :dishes
+  end
+
+  post '/search', to: 'search#results'
 end
