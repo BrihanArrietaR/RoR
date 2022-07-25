@@ -3,8 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
   skip_before_action :verify_authenticity_token
 
-  def index
-    @users = User.all
+  def index;
   end
 
   def show; end
@@ -19,6 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
       if @user.save
+        !login
         redirect_to user_url(@user), notice: "User was successfully created."
         render 'api/users/index', status: :created
       else
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
 
 
     def user_params
-      params.require(:user).permit(:name, :address, :role)
+      params.require(:user).permit(:name, :address, :role, :password, :password_confirmation)
     end
 end
 end

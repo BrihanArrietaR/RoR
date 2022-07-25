@@ -5,6 +5,7 @@ ruby '2.7.0'
 
 gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
 
+gem 'bcrypt'
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise'

@@ -14,5 +14,10 @@ module Proyecto
     Dir.glob("#{Rails.root}/app/assets/images/**").each do |path|
       config.assets.paths << path
     end
+
+    config.middleware.use ActionDispatch::Cookies 
+    config.middleware.use ActionDispatch::Session::CookieStore
+
+    config.api_only = false
   end
 end
