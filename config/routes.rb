@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :dishes
   end
 
-  post '/search', to: 'search#results'
+  get 'search/create'
 end
