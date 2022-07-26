@@ -9,9 +9,6 @@
     = f.label :email, class: "form-label required"
     = f.text_field :email, autofocus: true, class: "form-control"
   .form-group.ml-4.mr-4
-    = f.label :password, class: "form-label required"
-    = f.text_field :password, autofocus: true, class: "form-control"
-  .form-group.ml-4.mr-4
     = f.label :role, class: 'form-label required'
     = f.select(:role, options_for_select(roles, @user.role),
                           {prompt:"Seleccione"}, class: 'form-control')

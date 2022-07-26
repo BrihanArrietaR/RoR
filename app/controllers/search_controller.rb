@@ -6,7 +6,7 @@ class SearchController < ApplicationController
 
         respond_to do |format|
             format.html { redirect_to users_url }
-            format.json { render json: @users}
+            format.json { render json: @users }
             format.js
         end
     end

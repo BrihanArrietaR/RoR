@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   end
 
   get 'search/create'
+
+  post '/search', to: 'search#results'
 end

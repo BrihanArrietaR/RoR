@@ -39,4 +39,7 @@ class SessionsController < ApplicationController
     def session_params
           params.require(:user).permit(:name, :password)
     end
+
+    def search
+        @user = User.find(user_params[:name])
     end
