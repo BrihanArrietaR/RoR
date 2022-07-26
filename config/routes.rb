@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   post '/logout',   to: 'sessions#destroy'
   get '/logged_in', to: 'sessions#is_logged_in?'
 
+  resources :users
+  resources :orders
+  resources :dishes
+
   scope module: :api do
     resources :users
     resources :orders
